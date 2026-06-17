@@ -22,14 +22,14 @@ const register = async (req, res) => {
 
     // hash password 
 
-    const saltRound = 10 ; 
-    const hash_Password = await bcrypt.hash(password , saltRound);
+    // const saltRound = 10 ; 
+    // const hash_Password = await bcrypt.hash(password , saltRound);
 
     const userCreated = await User.create({
       username,
       email,
       phone,
-      password : hash_Password,
+      password,
     });
 
     console.log(userCreated);
