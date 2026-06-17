@@ -34,7 +34,7 @@ const register = async (req, res) => {
 
     console.log(userCreated);
 
-    res.status(200).json({ message: "User Created !" });
+    res.status(200).json({ message: "User Created !" , token : await userCreated.generateToken()});
   } catch (error) {
     console.log("ERROR =>", error);
 
