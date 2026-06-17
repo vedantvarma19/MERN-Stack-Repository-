@@ -29,14 +29,20 @@ const register = async (req, res) => {
       username,
       email,
       phone,
-      password,
+      password
     });
 
     console.log(userCreated);
 
     res.status(200).json({ message: "User Created !" });
   } catch (error) {
-    res.status(400).json("Page not found ");
+    console.log("ERROR =>", error);
+
+    res.status(500).json({
+        success: false,
+        message: error.message,
+    });
+
   }
 };
 

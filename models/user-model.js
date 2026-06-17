@@ -25,21 +25,15 @@ const userSchema = new mongoose.Schema({
 });
 
 // secure the password 
-userSchema.pre('save' , async function(){
-console.log('Pre  Method' , this ); 
-const user = this ; 
+userSchema.pre("save", async function () {
+    console.log("Pre Method", this);
 
-if(user.isModified('password')){ 
-    next();
-}
+    if (!this.isModified("password")) {
+        return;
+    }
 
-try{ 
-    const saltRound = await bcrypt.genSalt(10) ; 
-    const hash_Password = await bcrypt.hash(user.password , saltRound);
-    user.password = hash_Password;
-} catch(error){
-    next(error);
-}
+    const saltRound = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, saltRound);
 });
 
 
