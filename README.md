@@ -65,3 +65,11 @@
 **Backend Fundamentals:** 80% Complete 🚧
 **Database:** In Progress ⏳
 **Full Stack Development:** Coming Soon 🚀
+
+## 🌟 Goal
+
+**To become a proficient Full Stack Developer by consistently learning, building projects, and applying best development practices.
+
+**📬 Connect With Me
+
+**GitHub: @vedantvarma19
